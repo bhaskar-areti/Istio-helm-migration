@@ -1,0 +1,62 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  namespace: istio-system
+  name: istio-control-plane
+spec:
+  profile: demo
+  revision: "1-22-7"
+  tag: 1.22.7
+  # https://github.com/actions-runner-controller/actions-runner-controller/issues/591#issuecomment-856279007
+  components: #WIP
+    ingressGateways:
+    - enabled: true
+      name: istio-ingressgateway
+      label:
+        istio: ingressgateway
+        app: istio-ingressgateway
+        #topology.istio.io/network: network-app
+      k8s:
+        # env:
+        #   # sni-dnat adds the clusters required for AUTO_PASSTHROUGH mode
+        #   - name: ISTIO_META_ROUTER_MODE
+        #     value: "sni-dnat"
+        #   # traffic through this gateway should be routed inside the network
+        #   - name: ISTIO_META_REQUESTED_NETWORK_VIEW
+        #     value: network-app
+        service:
+          type: NodePort
+          ports:
+            - name: status-port
+              port: 15021
+              targetPort: 15021
+            - name: tls
+              port: 15443
+              targetPort: 15443
+            - name: tls-istiod
+              port: 15012
+              targetPort: 15012
+            - name: tls-webhook
+              port: 15017
+              targetPort: 15017
+  meshConfig:
+    accessLogFile: /dev/stdout
+    # https://github.com/actions-runner-controller/actions-runner-controller/issues/591#issuecomment-856279007
+    defaultConfig:
+      holdApplicationUntilProxyStarts: true
+  values:
+    global:
+      proxy:
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 1024Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
+    gateways:
+      istio-ingressgateway:
+        type: NodePort
+    # pilot:
+    #   env:
+    #     PILOT_HTTP10: 1 # enables HTTP 1 traffic to work with istio

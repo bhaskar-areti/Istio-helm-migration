@@ -1,0 +1,83 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: istio-operator
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  dependsOn:
+    - name: istio
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/istio-operator-1.22.7
+  prune: true
+  patches:
+    - patch: |-
+        apiVersion: install.istio.io/v1alpha1
+        kind: IstioOperator
+        metadata:
+          namespace: istio-system
+          name: istio-control-plane
+        spec:
+          components:
+            ingressGateways:
+            - name: istio-ingressgateway
+              enabled: true
+              label:
+                istio: ingressgateway
+                app: istio-ingressgateway
+                topology.istio.io/network: network-app
+              k8s:
+                env:
+                  - name: ISTIO_META_ROUTER_MODE
+                    value: "sni-dnat"
+                  - name: ISTIO_META_REQUESTED_NETWORK_VIEW
+                    value: network-app
+                service:
+                  type: NodePort
+                  ports:
+                  - name: status-port
+                    port: 15021
+                    targetPort: 15021
+                  - name: http2
+                    port: 80
+                    targetPort: 8080
+                    nodePort: 30080
+                  - name: https
+                    port: 443
+                    targetPort: 8443
+                    nodePort: 30443
+                  - name: postgres
+                    port: 5432
+                    targetPort: 5432
+                    nodePort: 30432
+                  - name: http-grpc
+                    port: 20443
+                    targetPort: 20443
+                    nodePort: 31443
+                  - name: tls
+                    port: 15443
+                    targetPort: 15443
+                  - name: tls-istiod
+                    port: 15012
+                    targetPort: 15012
+                  - name: tls-webhook
+                    port: 15017
+                    targetPort: 15017
+                  externalIPs:
+                  - 10.2.101.161
+                  - 10.2.101.162
+                  - 10.2.101.163
+          values:
+            global:
+              meshID: mesh1
+              multiCluster:
+                clusterName: cluster-app
+              network: network-app
+            telemetry:
+              enabled: false
+            pilot:
+              env:
+                PILOT_HTTP10: 1
+                
