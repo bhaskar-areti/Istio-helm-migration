@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: my-pod
+  namespace: migration
 spec:
   containers:
   - name: my-container

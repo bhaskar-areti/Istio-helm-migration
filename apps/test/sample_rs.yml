@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: test-replicaset
+  name: migration-replicaset
+  namespace: migration
 spec:
   replicas: 3
   selector:
