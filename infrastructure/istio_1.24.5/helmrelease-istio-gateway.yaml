@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system # Or your desired gateway namespace
 spec:
   interval: 5m
-  timeout: 10m
+  timeout: 15m
   releaseName: istio-ingressgateway # Added releaseName for clarity/consistency
   targetNamespace: istio-system  
   chart:
