@@ -15,6 +15,9 @@ spec:
         kind: HelmRepository
         name: istio-helmrepo
         namespace: flux-system
+  dependsOn:
+    - name: istio-base
+      namespace: flux-system 
   values:
     profile: default
 
