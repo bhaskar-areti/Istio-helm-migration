@@ -70,10 +70,11 @@ spec:
     # 4. Replicate custom environment variables
     podAnnotations:
       # Optional: if you need to set pod annotations for prometheus scraping, etc.
-    env:
-      - name: ISTIO_META_ROUTER_MODE
-        value: "sni-dnat"
-      - name: ISTIO_META_REQUESTED_NETWORK_VIEW
-        value: network-app      
+    default:
+      env:
+        - name: ISTIO_META_ROUTER_MODE
+          value: "sni-dnat"
+        - name: ISTIO_META_REQUESTED_NETWORK_VIEW
+          value: network-app      
 
 # ref: https://github.com/istio/istio/blob/0fb9e6f274272cc77d0d5a49d6ed1ff10edc7b20/manifests/charts/gateway/Chart.yaml
