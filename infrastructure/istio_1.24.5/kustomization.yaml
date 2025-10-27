@@ -5,4 +5,5 @@ resources:
   - helmrelease-istio-base.yaml
   - helmrelease-istiod.yaml  
   - helmrelease-istio-gateway.yaml  
+  - ../sources/istio-helmrepo.yaml
 #  - manifests.yaml
