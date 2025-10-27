@@ -22,7 +22,9 @@ spec:
     - name: istio-base
       namespace: flux-system      
   values:
-    replicaCount: 2     
+    replicaCount: 2 
+    default: 
+      image: registry.k8s.io/istio/proxyv2:1.24.5        
     # 1. Ensure the workload labels match our Istio Gateway CRs (this is the default, but good to check)
     # labels:
     #   istio: ingressgateway
