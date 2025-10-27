@@ -22,12 +22,13 @@ spec:
     - name: istio-base
       namespace: flux-system      
   values:
+    replicaCount: 2     
     # 1. Ensure the workload labels match our Istio Gateway CRs (this is the default, but good to check)
-    labels:
-      istio: ingressgateway
-      app: istio-ingressgateway
-      # topology.istio.io/network: network-app # Add this if it's required for our topology
-      # 2. Replicate the custom Service Type and ExternalIPs
+    # labels:
+    #   istio: ingressgateway
+    #   app: istio-ingressgateway
+    #   # topology.istio.io/network: network-app # Add this if it's required for our topology
+    #   # 2. Replicate the custom Service Type and ExternalIPs
     service:
       type: NodePort # CRITICAL: Change from default LoadBalancer
       externalIPs:
@@ -74,7 +75,5 @@ spec:
         value: "sni-dnat"
       - name: ISTIO_META_REQUESTED_NETWORK_VIEW
         value: network-app      
-    # Customize ingress gateway values here if needed
-    # For example, to set the number of replicas:
-    replicaCount: 2    
+
 # ref: https://github.com/istio/istio/blob/0fb9e6f274272cc77d0d5a49d6ed1ff10edc7b20/manifests/charts/gateway/Chart.yaml
