@@ -74,5 +74,5 @@ spec:
     #   # Optional: if you need to set pod annotations for prometheus scraping, etc.
     #   "sidecar.istio.io/proxyMetadata": |
     #     ISTIO_META_ROUTER_MODE: "sni-dnat"
-    #     ISTIO_META_REQUESTED_NETWORK_VIEW: network-app    ###
+    #     ISTIO_META_REQUESTED_NETWORK_VIEW: network-app    
 # ref: https://github.com/istio/istio/blob/0fb9e6f274272cc77d0d5a49d6ed1ff10edc7b20/manifests/charts/gateway/Chart.yaml
