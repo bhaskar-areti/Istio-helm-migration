@@ -60,3 +60,4 @@ spec:
     # pilot:
     #   env:
     #     PILOT_HTTP10: 1 # enables HTTP 1 traffic to work with istio
+#
