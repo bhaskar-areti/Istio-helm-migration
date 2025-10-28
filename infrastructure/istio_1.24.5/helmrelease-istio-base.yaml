@@ -1,26 +1,26 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: istio-base
-  namespace: flux-system
-spec:
-  interval: 10m
-  releaseName: istio-base
-  targetNamespace: istio-system
-  chart:
-    spec:
-      chart: base
-      version: 1.24.5
-      sourceRef:
-        kind: HelmRepository
-        name: istio-helmrepo # Name of your HelmRepository resource for Istio charts
-        namespace: flux-system
-  # values:
-  #   global:
-  #     istioNamespace: istio-system
-  #   pilot:
-  #     enabled: true
-  # # install:
-  # #   crds: CreateReplace
-  # # upgrade:
-  # #   crds: CreateReplace      
+# apiVersion: helm.toolkit.fluxcd.io/v2beta1
+# kind: HelmRelease
+# metadata:
+#   name: istio-base
+#   namespace: flux-system
+# spec:
+#   interval: 10m
+#   releaseName: istio-base
+#   targetNamespace: istio-system
+#   chart:
+#     spec:
+#       chart: base
+#       version: 1.24.5
+#       sourceRef:
+#         kind: HelmRepository
+#         name: istio-helmrepo # Name of your HelmRepository resource for Istio charts
+#         namespace: flux-system
+#   # values:
+#   #   global:
+#   #     istioNamespace: istio-system
+#   #   pilot:
+#   #     enabled: true
+#   # # install:
+#   # #   crds: CreateReplace
+#   # # upgrade:
+#   # #   crds: CreateReplace      
