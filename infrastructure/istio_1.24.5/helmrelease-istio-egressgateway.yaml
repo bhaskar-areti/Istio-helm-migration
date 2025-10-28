@@ -1,0 +1,37 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: istio-egressgateway-v124
+  namespace: flux-system # Or your desired gateway namespace
+spec:
+  interval: 5m
+  timeout: 15m
+  releaseName: istio-egressgateway-v124 # Added releaseName for clarity/consistency
+  targetNamespace: istio-system  
+  chart:
+    spec:
+      chart: gateway
+      version: 1.24.5
+      sourceRef:
+        kind: HelmRepository
+        name: istio-helmrepo
+        namespace: flux-system
+  dependsOn:
+    - name: istiod-v124
+      namespace: flux-system
+    - name: istio-base
+      namespace: flux-system      
+  values:
+    components:
+      ingressGateways:
+        - name: istio-ingressgateway
+          enabled: false
+      egressGateways:
+        - name: istio-egressgateway
+          enabled: true      
+    name: istio-egressgateway
+    replicaCount: 2
+    revision: v124 
+    labels:
+      app: istio-egressgateway
