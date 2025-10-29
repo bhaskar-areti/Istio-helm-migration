@@ -7,7 +7,7 @@ metadata:
 spec:
   interval: 5m
   timeout: 15m
-  releaseName: istio-ingressgateway-v124# Added releaseName for clarity/consistency
+  releaseName: istio-ingressgateway-v124 # Added releaseName for clarity/consistency
   targetNamespace: istio-system  
   chart:
     spec:
