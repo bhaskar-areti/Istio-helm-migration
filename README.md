@@ -74,3 +74,19 @@ https://github.com/istio/istio/blob/master/manifests/charts/gateway/values.yaml
 https://github.com/istio/istio/blob/master/manifests/charts/gateways/istio-ingress/values.yaml
 
 https://github.com/istio/istio/blob/release-1.24/manifests/charts/istio-control/istio-discovery/values.yaml
+
+
+infrastructure/
+├── istio_1.23.4/
+│   └── kustomization.yaml (This defines the Istio Operator deployment)
+│   └── manifests.yaml (This defines the Istio Operator deployment)
+│   └── namespce.yaml (This defines the Istio Operator deployment)
+├── istio_1.24.5_canary/
+│   ├── helmrelease-istio-base.yaml
+│   ├── helmrelease-istiod.yaml (istiod-v124)
+│   ├── helmrelease-istio-ingressgateway.yaml (istio-ingressgateway-v124)
+│   └── helmrelease-istio-egressgateway.yaml (istio-egressgateway-v124)
+cluster-test
+├── istio.yml
+├── istio-operator.yml
+├── istio1.24.5.yml
