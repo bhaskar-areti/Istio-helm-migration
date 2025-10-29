@@ -21,13 +21,13 @@ spec:
           name: istio-control-plane
         spec:
           components:
-            egressGateways:
-            - name: istio-egressgateway-v1234
-              enabled: true
-              label:
-                istio: egressgateway
-                app: istio-egressgateway-v1234
-            ingressGateways:
+            # egressGateways:
+            # - name: istio-egressgateway-v1234
+            #   enabled: true
+            #   label:
+            #     istio: egressgateway
+            #     app: istio-egressgateway-v1234
+            # ingressGateways:
             - name: istio-ingressgateway
               enabled: true
               label:
