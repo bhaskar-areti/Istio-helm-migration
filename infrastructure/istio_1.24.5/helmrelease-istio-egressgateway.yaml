@@ -35,3 +35,4 @@ spec:
     revision: v1.24.5 
     labels:
       app: istio-egressgateway
+      istio: egressgateway
