@@ -23,13 +23,13 @@ spec:
     - name: istio-base
       namespace: flux-system      
   values:
-    components:
-      ingressGateways:
-        - name: istio-ingressgateway
-          enabled: false
-      egressGateways:
-        - name: istio-egressgateway
-          enabled: true      
+    # components:
+    #   ingressGateways:
+    #     - name: istio-ingressgateway
+    #       enabled: false
+    #   egressGateways:
+    #     - name: istio-egressgateway
+    #       enabled: true      
     name: istio-egressgateway
     replicaCount: 2
     revision: v1.24.5 
