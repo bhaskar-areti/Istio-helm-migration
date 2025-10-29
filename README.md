@@ -69,3 +69,8 @@ These charts are typically installed in a specific order: base first, then istio
 
 Useful links:
 https://github.com/istio/istio/issues/44604
+
+https://github.com/istio/istio/blob/master/manifests/charts/gateway/values.yaml
+https://github.com/istio/istio/blob/master/manifests/charts/gateways/istio-ingress/values.yaml
+
+https://github.com/istio/istio/blob/release-1.24/manifests/charts/istio-control/istio-discovery/values.yaml

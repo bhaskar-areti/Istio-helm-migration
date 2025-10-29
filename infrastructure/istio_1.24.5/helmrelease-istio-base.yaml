@@ -21,7 +21,4 @@ spec:
   #     istioNamespace: istio-system
   #   pilot:
   #     enabled: true
-  # # install:
-  # #   crds: CreateReplace
-  # # upgrade:
-  # #   crds: CreateReplace      
+#https://github.com/istio/istio/blob/release-1.24/manifests/charts/base/values.yaml 
