@@ -27,7 +27,7 @@ spec:
             #   label:
             #     istio: egressgateway
             #     app: istio-egressgateway-v1234
-            # ingressGateways:
+            ingressGateways:
             - name: istio-ingressgateway
               enabled: true
               label:
