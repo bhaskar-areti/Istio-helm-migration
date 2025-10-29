@@ -23,18 +23,18 @@ spec:
     - name: istio-base
       namespace: flux-system      
   values:
-    components:
-      ingressGateways:
-        - name: istio-ingressgateway
-          enabled: false
-      egressGateways:
-        - name: istio-egressgateway
-          enabled: true      
+    # components:
+    #   ingressGateways:
+    #     - name: istio-ingressgateway
+    #       enabled: false
+    #   egressGateways:
+    #     - name: istio-egressgateway
+    #       enabled: true      
     name: istio-egressgateway
     replicaCount: 2
     revision: v124
     labels:
       app: istio-egressgateway
-    #   istio: egressgateway
-    # podAnnotations:
-    #   inject.istio.io/revision: v1.24.5  
+      istio: egressgateway
+    podAnnotations:
+      inject.istio.io/revision: v124
