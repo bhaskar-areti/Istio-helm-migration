@@ -1,11 +1,11 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: istiod-v1.24.5
+  name: istiod-v124
   namespace: flux-system
 spec:
   interval: 10m
-  releaseName: istiod-v1.24.5
+  releaseName: istiod-v124
   targetNamespace: istio-system
   chart:
     spec:
@@ -19,7 +19,7 @@ spec:
     - name: istio-base
       namespace: flux-system 
   values:
-    revision: v1.24.5
+    revision: v124
     meshConfig:
       defaultConfig:   
         holdApplicationUntilProxyStarts: true #https://istio.io/latest/docs/reference/config/istio.mesh.v1alpha1/
