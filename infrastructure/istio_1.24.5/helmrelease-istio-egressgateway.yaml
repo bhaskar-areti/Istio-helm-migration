@@ -36,3 +36,5 @@ spec:
     labels:
       app: istio-egressgateway
       istio: egressgateway
+    podAnnotations:
+      inject.istio.io/revision: v1.24.5  
