@@ -23,3 +23,15 @@ spec:
     meshConfig:
       defaultConfig:   
         holdApplicationUntilProxyStarts: true #https://istio.io/latest/docs/reference/config/istio.mesh.v1alpha1/
+    global:
+      meshID: mesh1
+      multiCluster:
+        clusterName: cluster-app
+      # Sets the default network for Istiod to reference configuration for:
+      network: network-app 
+    telemetry:
+      enabled: false 
+    pilot:
+      env:
+        PILOT_HTTP10: 1 #This setting is to enable PILOT_HTTP/1.0 support for the Envoy proxies managed by Istio.
+#The main purpose of this setting is to ensure backward compatibility in your service mesh

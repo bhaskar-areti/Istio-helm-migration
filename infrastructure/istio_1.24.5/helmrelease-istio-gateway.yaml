@@ -33,7 +33,7 @@ spec:
       app: istio-ingressgateway
       istio: ingressgateway
       topology.istio.io/network: network-app # Add this if it's required for our topology
-        # 2. Replicating the necessary custom service configuration from v1.23.4
+        # Replicating the necessary custom service configuration from v1.23.4 operator config
     service:
       type: NodePort # CRITICAL: Change from default LoadBalancer
       externalIPs:
@@ -47,20 +47,20 @@ spec:
           targetPort: 15021
         - name: http2
           port: 80
-          targetPort: 8080 # CRITICAL: Old targetPort was 8080
-          nodePort: 30080 # CRITICAL: Replicate old NodePort
+          targetPort: 8080 
+          nodePort: 30080 
         - name: https
           port: 443
-          targetPort: 8443 # CRITICAL: Old targetPort was 8443
-          nodePort: 30443 # CRITICAL: Replicate old NodePort
+          targetPort: 8443
+          nodePort: 30443 
         - name: postgres
           port: 5432
           targetPort: 5432
-          nodePort: 30432 # CRITICAL: Replicate old NodePort
+          nodePort: 30432
         - name: http-grpc
           port: 20443
           targetPort: 20443
-          nodePort: 31443 # CRITICAL: Replicate old NodePort
+          nodePort: 31443 
         # The following ports may be implicitly handled by the Service created by Istiod,
         # but if they were explicitly defined here, include them:
         - name: tls
@@ -75,8 +75,8 @@ spec:
     # 4. Replicating custom environment variables using pod annotations
     podAnnotations:
       # important: Triggers the v124 control plane's webhook for processing this pod.
-      istio.io/rev: default     
+      istio.io/rev: default   # ref: https://istio.io/latest/docs/reference/config/annotations/#IoIstioRev  
+      #This annotation is the instruction that tells the Istio Mutating Webhook to inject the Envoy proxy into the gateway pod
       "sidecar.istio.io/proxyMetadata": |
         ISTIO_META_ROUTER_MODE: "sni-dnat"
         ISTIO_META_REQUESTED_NETWORK_VIEW: network-app    
-# ref: https://github.com/istio/istio/blob/0fb9e6f274272cc77d0d5a49d6ed1ff10edc7b20/manifests/charts/gateway/Chart.yaml
