@@ -4,7 +4,7 @@ metadata:
   name: migration-deployment
   namespace: migration
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: my-app
