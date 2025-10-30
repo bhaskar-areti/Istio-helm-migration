@@ -9,4 +9,4 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./infrastructure/istio_1.24.5
-  prune: true
+  prune: false
