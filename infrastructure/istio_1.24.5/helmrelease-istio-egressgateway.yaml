@@ -29,7 +29,23 @@ spec:
     #       enabled: false
     #   egressGateways:
     #     - name: istio-egressgateway
-    #       enabled: true      
+    #       enabled: true 
+    resources:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+    global:
+      proxy:
+        resources:
+          requests:
+            cpu: 50m
+            memory: 64Mi
+          limits:
+            cpu: 2000m
+            memory: 1024Mi        
     name: istio-egressgateway
     replicaCount: 1
 #    revision: v124

@@ -35,3 +35,11 @@ spec:
       env:
         PILOT_HTTP10: 1 #This setting is to enable PILOT_HTTP/1.0 support for the Envoy proxies managed by Istio.
 #The main purpose of this setting is to ensure backward compatibility in your service mesh
+      resources:
+        requests:
+          cpu: 50m
+          memory: 128Mi
+        limits:
+          cpu: 200m
+          memory: 256Mi
+
