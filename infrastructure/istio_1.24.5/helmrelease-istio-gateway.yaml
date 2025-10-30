@@ -24,7 +24,7 @@ spec:
       namespace: flux-system      
   values:
     name: istio-ingressgateway  
-    replicaCount: 2
+    replicaCount: 3
 #    revision: v124
     global:
       proxy:
