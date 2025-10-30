@@ -12,7 +12,7 @@ spec:
   chart:
     spec:
       chart: gateway
-      version: 1.24.5
+      version: 1.25.5
       sourceRef:
         kind: HelmRepository
         name: istio-helmrepo
@@ -47,7 +47,7 @@ spec:
       # Our global.proxy.resources section then overrides the resources for this injected proxy.
       # Legacy Istio installation method ( IstioOperator) deployed the main Envoy container plus (istio-proxy) sidecar,
       # resulting in two containers. The new Istio chart (helmmanaged: gateway) is designed to deploy only one container: the Envoy proxy itself.
-      # The pod is created empty, and the (Istio) Mutating Webhook injects the (istio-proxy) image as the sole container.        
+      # The pod is created empty, and the (Istio) Mutating Webhook injects the (istio-proxy) image as the sole container. 
     labels:
       app: istio-ingressgateway
       istio: ingressgateway

@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: base
-      version: 1.24.5
+      version: 1.25.5
       sourceRef:
         kind: HelmRepository
         name: istio-helmrepo # Name of your HelmRepository resource for Istio charts

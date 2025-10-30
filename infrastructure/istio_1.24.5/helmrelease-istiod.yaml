@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: istiod
-      version: 1.24.5
+      version: 1.25.5
       sourceRef:
         kind: HelmRepository
         name: istio-helmrepo
@@ -34,7 +34,7 @@ spec:
     pilot:
       env:
         PILOT_HTTP10: 1 #This setting is to enable PILOT_HTTP/1.0 support for the Envoy proxies managed by Istio.
-#The main purpose of this setting is to ensure backward compatibility in your service mesh
+#The main purpose of this setting is to ensure backward compatibility in our service mesh
       resources:
         requests:
           cpu: 50m
