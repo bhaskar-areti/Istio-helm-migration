@@ -52,6 +52,8 @@ spec:
     labels:
       app: istio-egressgateway
       istio: egressgateway
+    service:
+      type: ClusterIP   #LoadBalancer is the default service type for the Istio Gateway chart
     podAnnotations:
       # important: Triggers the v124 control plane's webhook for processing this pod.
       istio.io/rev: default    
