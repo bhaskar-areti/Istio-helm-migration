@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/istio_1.24.5
+  path: ./infrastructure/istio_1.25.5
   prune: true
   patches:
     - patch: |-
