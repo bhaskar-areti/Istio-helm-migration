@@ -81,6 +81,10 @@ infrastructure/
 │   └── kustomization.yaml (This defines the Istio Operator deployment)
 │   └── manifests.yaml (This defines the Istio Operator deployment)
 │   └── namespce.yaml (This defines the Istio Operator deployment)
+├── istio-routing-como-app-nonprod/
+│   └── kustomization.yaml
+│   └── gateway.yaml
+│   └── virtual-service.yaml
 ├── istio_1.24.5_canary/
 │   ├── helmrelease-istio-base.yaml
 │   ├── helmrelease-istiod.yaml (istiod-v124)

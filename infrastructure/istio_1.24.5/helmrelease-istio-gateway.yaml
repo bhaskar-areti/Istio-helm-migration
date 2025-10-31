@@ -51,14 +51,14 @@ spec:
     labels:
       app: istio-ingressgateway
       istio: ingressgateway
-      topology.istio.io/network: network-app # Add this if it's required for our topology
+#      topology.istio.io/network: network-app # Add this if it's required for our topology
         # Replicating the necessary custom service configuration from v1.23.4 operator config
     service:
       type: NodePort # CRITICAL: Change from default LoadBalancer
-      externalIPs:
-        - 10.2.101.161
-        - 10.2.101.162
-        - 10.2.101.163
+      # externalIPs:
+      #   - 10.2.101.161
+      #   - 10.2.101.162
+      #   - 10.2.101.163
       # 3. Replicate all custom ports with their NodePort values
       ports:
         - name: status-port
@@ -98,4 +98,4 @@ spec:
       #This annotation is the instruction that tells the Istio Mutating Webhook to inject the Envoy proxy into the gateway pod
       "sidecar.istio.io/proxyMetadata": |
         ISTIO_META_ROUTER_MODE: "sni-dnat"
-        ISTIO_META_REQUESTED_NETWORK_VIEW: network-app    
+#        ISTIO_META_REQUESTED_NETWORK_VIEW: network-app    
