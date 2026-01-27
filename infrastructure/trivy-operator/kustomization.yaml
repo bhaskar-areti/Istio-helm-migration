@@ -3,5 +3,7 @@ kind: Kustomization
 resources:
   - trivy-operator.yaml
   - namespace.yaml
+  - trivy-ui-release.yaml
   - ../sources/trivy-helmrepo.yaml  
+  - ../sources/trivy-ui-helmrepo.yaml  
 
