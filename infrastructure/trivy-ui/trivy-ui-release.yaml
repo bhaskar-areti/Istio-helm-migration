@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: trivy-ui
-      version: 0.0.2    # or latest available in repo
+#      version: v0.0.2    # or latest available in repo
       sourceRef:
         kind: HelmRepository
         name: trivy-ui
