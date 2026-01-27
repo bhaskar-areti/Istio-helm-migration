@@ -12,7 +12,7 @@ spec:
         name: trivy-operator
         namespace: flux-system
       version: 0.10.1
-  interval: 60m
+  interval: 1m
   values:
     trivy:
       ignoreUnfixed: true
