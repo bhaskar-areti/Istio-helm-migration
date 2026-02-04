@@ -1,0 +1,20 @@
+#https://github.com/actions-runner-controller/actions-runner-controller
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: test-pda-api-runner-rc
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+    spec:
+      image: summerwind/actions-runner-dind:v2.331.0-ubuntu-22.04-a868229
+      dockerdWithinRunnerContainer: true
+      # repository: capitalgroup/como-pda-api
+      # labels:
+      #   - como-rc
+      #   - refs/heads/rc
+      #   - como-app
