@@ -11,7 +11,7 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
     spec:
-      image: summerwind/actions-runner-dind:v2.331.0-ubuntu-22.04-a868229
+      image: ghcr.io/actions/actions-runner:latest
       dockerdWithinRunnerContainer: true
       # repository: capitalgroup/como-pda-api
       # labels:
