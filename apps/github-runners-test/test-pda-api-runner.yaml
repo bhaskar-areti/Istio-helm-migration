@@ -13,8 +13,7 @@ spec:
     spec:
       image: ghcr.io/actions/actions-runner:latest
       dockerdWithinRunnerContainer: true
-      # repository: capitalgroup/como-pda-api
-      # labels:
-      #   - como-rc
-      #   - refs/heads/rc
-      #   - como-app
+      repository: bhaskar-areti/Istio-helm-migration
+      labels:
+        - refs/heads/rc
+        - como-app
