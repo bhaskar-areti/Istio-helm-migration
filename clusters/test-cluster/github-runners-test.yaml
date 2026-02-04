@@ -4,6 +4,8 @@ metadata:
   name: github-runners-test
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: github-actions-runner
   interval: 10m0s
   # dependsOn:
   #   - name: como-rc
