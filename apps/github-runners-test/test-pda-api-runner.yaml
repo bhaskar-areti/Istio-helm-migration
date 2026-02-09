@@ -1,19 +1,19 @@
-#https://github.com/actions-runner-controller/actions-runner-controller
-apiVersion: actions.summerwind.dev/v1alpha1
-kind: RunnerDeployment
-metadata:
-  name: test-pda-api-runner-rc
-  namespace: default
-spec:
-  replicas: 1
-  template:
-    metadata:
-      annotations:
-        sidecar.istio.io/inject: "false"
-    spec:
-      image: ghcr.io/actions/actions-runner:latest
-      dockerdWithinRunnerContainer: true
-      repository: bhaskar-areti/Istio-helm-migration
-      labels:
-        - refs/heads/rc
-        - como-app
+# #https://github.com/actions-runner-controller/actions-runner-controller
+# apiVersion: actions.summerwind.dev/v1alpha1
+# kind: RunnerDeployment
+# metadata:
+#   name: test-pda-api-runner-rc
+#   namespace: default
+# spec:
+#   replicas: 1
+#   template:
+#     metadata:
+#       annotations:
+#         sidecar.istio.io/inject: "false"
+#     spec:
+#       image: ghcr.io/actions/actions-runner:latest
+#       dockerdWithinRunnerContainer: true
+#       repository: bhaskar-areti/Istio-helm-migration
+#       labels:
+#         - refs/heads/rc
+#         - como-app
