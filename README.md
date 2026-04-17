@@ -99,3 +99,70 @@ test
 
 Gateway chart ref: https://github.com/istio/istio/blob/0fb9e6f274272cc77d0d5a49d6ed1ff10edc7b20/manifests/charts/gateway/Chart.yaml
 
+
+
+Current directories structure in my org
+Caitalgroup
+  como-main
+  ├── .k8s
+  │    ├── como-bgprocessor.yaml
+  │    ├── como-scheduler.yaml
+  ├── .github
+  │    ├── workflows/
+  │    │     ├── build-test-all.yaml
+  │    │     ├── pr-unit-tests.yaml
+  │    │ 
+  │    └── dependabot.yml 
+  k8s-deployment
+  ├── clusters/
+  │   └── Live-cluster
+  │   └── test-cluster/
+  │        └── flux-system/
+  │             ├── kustomization.yaml
+  │             └── gotk-sync.yaml
+  │             └── gotk-components.yaml
+  ├── apps/
+  │   ├── nginx-test/
+  │      ├── deployment.yaml
+  │      ├── service.yaml
+  │      └── kustomization.yaml
+  │  
+  └── infrastructure/
+
+
+
+#################
+
+
+  bhaskar-areti/
+  test-githubactions/
+  │  ├── .k8s
+  │  │    ├── nginx.yaml
+  │  │  
+  │  ├── .github
+  │        ├── workflows/
+  │        │    ├── build-test-all.yaml
+  │        │    ├── pr-unit-tests.yaml
+  │        │
+  │        └──-deploy-nginx.yaml 
+  istio-helm-migration
+  ├── clusters/
+  │      └── test-cluster/
+  │             └── flux-system/
+  │             │     ├── kustomization.yaml
+  │             │     └── gotk-sync.yaml
+  │             │     └── gotk-components.yaml
+  │             │
+  │             └── trivy-operator.yml
+  │             └── github-runners-test.yml
+  │             └── istio1.25.5
+  ├── apps/
+  │   ├── github-runners-test
+  │   │   ├── repository-runner.yaml
+  │   │   ├── test-pda-api-runner.yaml
+  │   ├── nginx-test/
+  │      ├── deployment.yaml
+  │      ├── service.yaml
+  │      └── kustomization.yaml
+  │  
+  └── infrastructure/
