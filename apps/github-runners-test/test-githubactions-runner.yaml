@@ -1,0 +1,14 @@
+
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: test-githubactions-runner
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    spec:
+      image: summerwind/actions-runner-dind:v2.333.0-ubuntu-24.04-5f4c132
+      repository: bhaskar-areti/test-githubactions
+      labels:
+        - como-app
