@@ -1,19 +1,19 @@
-#https://github.com/actions-runner-controller/actions-runner-controller
-apiVersion: actions.summerwind.dev/v1alpha1
-kind: RunnerDeployment
-metadata:
-  name: test-pda-api-runner
-  namespace: default
-spec:
-  replicas: 1
-  template:
-    # metadata:
-    #   annotations:
-    #     sidecar.istio.io/inject: "false"
-    spec:
-      image: summerwind/actions-runner-dind:v2.333.0-ubuntu-24.04-5f4c132
-      # dockerdWithinRunnerContainer: true
-      repository: bhaskar-areti/Istio-helm-migration-k8s-deployments
-      labels:
-        - refs/heads/main
-        - como-app
+# #https://github.com/actions-runner-controller/actions-runner-controller
+# apiVersion: actions.summerwind.dev/v1alpha1
+# kind: RunnerDeployment
+# metadata:
+#   name: test-pda-api-runner
+#   namespace: default
+# spec:
+#   replicas: 1
+#   template:
+#     # metadata:
+#     #   annotations:
+#     #     sidecar.istio.io/inject: "false"
+#     spec:
+#       image: summerwind/actions-runner-dind:v2.333.0-ubuntu-24.04-5f4c132
+#       # dockerdWithinRunnerContainer: true
+#       repository: bhaskar-areti/******
+#       labels:
+#         - refs/heads/main
+#         - como-app
