@@ -13,7 +13,7 @@ spec:
     spec:
       image: summerwind/actions-runner-dind:v2.333.0-ubuntu-24.04-5f4c132
       # dockerdWithinRunnerContainer: true
-      repository: bhaskar-areti/Istio-helm-migration
+      repository: bhaskar-areti/Istio-helm-migration-k8s-deployments
       labels:
         - refs/heads/main
         - como-app
