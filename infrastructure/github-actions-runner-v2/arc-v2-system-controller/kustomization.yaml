@@ -3,5 +3,6 @@ kind: Kustomization
 
 resources:
   - gha-runner-scale-set-controller.yaml
+  - namespace.yaml
   - ../../sources/github-runner-v2.yaml
 
