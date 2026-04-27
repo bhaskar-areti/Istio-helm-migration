@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: arc-github-oci
+  name: arc-charts-v2
   namespace: flux-system
 spec:
   type: oci

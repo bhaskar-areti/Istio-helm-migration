@@ -4,22 +4,25 @@ metadata:
   name: gha-runner-scale-set-controller  
   namespace: arc-v2-system-controller  
 spec:  
-  interval: 5m  
+  interval: 5m 
+  releaseName: gha-runner-scale-set-controller
   chart:  
     spec:  
       chart: gha-runner-scale-set-controller  
-      version: "0.14.0"  
+      version: "0.14.1" 
       sourceRef:  
         kind: HelmRepository  
         name: actions-runner-controller  
         namespace: flux-system  
+  install:
+    createNamespace: true
   values:  
     replicaCount: 1  
     image:  
       repository: ghcr.io/actions/gha-runner-scale-set-controller  
-      tag: "0.14.0"  
-    flags:  
-      updateStrategy: "eventual"  # Allows graceful updates [3](#1-2)
+      tag: "0.14.1" 
+#   flags:  
+#     updateStrategy: "eventual"  # Allows graceful updates [3](#1-2)
 #https://github.com/actions/actions-runner-controller/blob/5f4c132f/charts/gha-runner-scale-set-controller/Chart.yaml
 #Values chart
 #https://github.com/actions/actions-runner-controller/blob/5f4c132f124469fd600ae9e18bbe9f7b93c13bde/charts/gha-runner-scale-set-controller/values.yaml
