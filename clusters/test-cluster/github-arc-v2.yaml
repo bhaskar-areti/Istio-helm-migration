@@ -4,6 +4,10 @@ metadata:
   name: github-actions-runner-v2
   namespace: flux-system
 spec:
-  path: ./infrastructure/github-actions-runner-v2
-  prune: true
   interval: 10m
+  prune: true
+  path: ./infrastructure/github-actions-runner-v2
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+
