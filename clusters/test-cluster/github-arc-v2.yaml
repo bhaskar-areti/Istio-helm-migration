@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 10m
   prune: true
-  path: ./infrastructure/github-actions-runner-v2
+  path: ./infrastructure/github-actions-runner-v2/arc-v2-system-controller
   sourceRef:
     kind: GitRepository
     name: flux-system
