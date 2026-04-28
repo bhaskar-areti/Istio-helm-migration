@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: github-actions-runner-scalesets-v2
+  namespace: flux-system
+spec:
+  interval: 10m
+  prune: true
+  path: ./infrastructure/github-actions-runner-v2/arc-v2-runners-scale-set
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+
