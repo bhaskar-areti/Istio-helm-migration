@@ -20,9 +20,6 @@ spec:
     githubConfigSecret: arc-github-app-v2
     minRunners: 1  
     maxRunners: 5  
-    controllerServiceAccount:  
-      name: "gha-runner-scale-set-controller-gha-rs-controller"  
-      namespace: "arc-v2-runners-scaleset"
 #https://github.com/actions/actions-runner-controller/blob/5f4c132f/charts/gha-runner-scale-set/Chart.yaml
     #  Dedicated scale set identity
     runnerScaleSetName: v2-deploy-test
@@ -35,11 +32,3 @@ spec:
       image:
         repository: ghcr.io/actions/actions-runner
         tag: latest
-      resources:
-        requests:
-          cpu: "500m"
-          memory: "1Gi"
-        limits:
-          cpu: "2"
-          memory: "4Gi"
-      
