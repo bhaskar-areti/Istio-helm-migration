@@ -17,14 +17,14 @@ spec:
     createNamespace: true        
   values:  
     githubConfigUrl: https://github.com/bhaskar-areti/test-githubactions-como-pricer
-    githubConfigSecret:  arc-github-app-v2
+    githubConfigSecret: arc-github-app-v2
     minRunners: 1  
     maxRunners: 5  
     controllerServiceAccount:  
       name: "gha-runner-scale-set-controller-gha-rs-controller"  
       namespace: "arc-v2-runners-scaleset"
 #https://github.com/actions/actions-runner-controller/blob/5f4c132f/charts/gha-runner-scale-set/Chart.yaml
-    # 🔑 Dedicated scale set identity
+    #  Dedicated scale set identity
     runnerScaleSetName: v2-deploy-test
     runnerGroup: v2-test-group
     labels:
