@@ -17,8 +17,7 @@ spec:
     createNamespace: true        
   values:  
     githubConfigUrl: https://github.com/bhaskar-areti/test-githubactions-como-pricer
-    githubConfigSecret:  
-      github_token: github-token
+    githubConfigSecret:  arc-github-app-v2
     minRunners: 1  
     maxRunners: 5  
     controllerServiceAccount:  
