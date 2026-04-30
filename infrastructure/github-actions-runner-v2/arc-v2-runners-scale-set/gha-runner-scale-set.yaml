@@ -23,7 +23,7 @@ spec:
 #https://github.com/actions/actions-runner-controller/blob/5f4c132f/charts/gha-runner-scale-set/Chart.yaml
     #  Dedicated scale set identity
     runnerScaleSetName: v2-deploy-test
-    runnerGroup: v2-test-group
+#    runnerGroup: v2-test-group
     labels:
       - arc-v2
       - deploy
