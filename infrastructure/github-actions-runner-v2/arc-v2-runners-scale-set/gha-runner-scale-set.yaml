@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1  
 kind: HelmRelease  
 metadata:  
-  name: github-runners-v2-scaleset
+  name: v2-deploy-test
   namespace: arc-v2-runners-scaleset
 spec:  
   interval: 5m  
@@ -16,7 +16,7 @@ spec:
   install:
     createNamespace: true        
   values:  
-    githubConfigUrl: https://github.com/bhaskar-areti/test-githubactions-como-pricer
+    githubConfigUrl: https://github.com/bhaskar-areti
     githubConfigSecret: arc-github-app-v2
     minRunners: 1  
     maxRunners: 5  
@@ -25,9 +25,7 @@ spec:
     runnerScaleSetName: v2-deploy-test
 #    runnerGroup: v2-test-group
     labels:
-      - arc-v2
-      - deploy
-      - linux
+      - v2-deploy-test
     runner:
       image:
         repository: ghcr.io/actions/actions-runner
