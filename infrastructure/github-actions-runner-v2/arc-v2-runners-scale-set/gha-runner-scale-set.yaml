@@ -16,9 +16,9 @@ spec:
   install:
     createNamespace: true        
   values:  
-    githubConfigUrl: https://github.com/bhaskar-areti
+    githubConfigUrl: https://github.com/bhaskar-areti/test-githubactions-como-pricer
     githubConfigSecret: arc-github-app-v2
-    minRunners: 1  
+    minRunners: 0  
     maxRunners: 5  
 #https://github.com/actions/actions-runner-controller/blob/5f4c132f/charts/gha-runner-scale-set/Chart.yaml
     #  Dedicated scale set identity
