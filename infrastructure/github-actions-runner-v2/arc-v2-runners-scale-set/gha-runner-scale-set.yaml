@@ -30,3 +30,9 @@ spec:
       image:
         repository: ghcr.io/actions/actions-runner
         tag: latest
+
+    webhookServer:
+      enabled: true
+
+    webhookService:
+      type: LoadBalancer
