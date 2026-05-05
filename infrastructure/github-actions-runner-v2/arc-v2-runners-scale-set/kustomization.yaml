@@ -4,4 +4,6 @@ resources:
 - gha-runner-scale-set.yaml
 - namespace.yaml
 - github-arc-v2-app.yaml
+- arc-v2-runner-ns-clusterrolebinding.yaml
+- arc-v2-runner-ns-clusterrole.yaml
 - ../../sources/github-runner-v2.yaml
