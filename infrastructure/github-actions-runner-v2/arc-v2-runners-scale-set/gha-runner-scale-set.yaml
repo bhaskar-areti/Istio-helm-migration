@@ -18,19 +18,15 @@ spec:
   values:
     githubConfigUrl: https://github.com/bhaskar-areti/test-githubactions-como-pricer
     githubConfigSecret: arc-github-app-v2
-
     runnerScaleSetName: v2-deploy-test
     labels:
-      - v2-deploy-test
-
+      arc: v2-deploy-test
     minRunners: 0
     maxRunners: 5
-
     runner:
       image:
         repository: ghcr.io/actions/actions-runner
         tag: latest
-
     webhookServer:
       enabled: true
       service:
