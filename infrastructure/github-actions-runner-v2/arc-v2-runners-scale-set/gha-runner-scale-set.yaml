@@ -15,17 +15,17 @@ spec:
         namespace: flux-system  
   install:
     createNamespace: true        
-  values:  
+  values:
     githubConfigUrl: https://github.com/bhaskar-areti/test-githubactions-como-pricer
     githubConfigSecret: arc-github-app-v2
-    minRunners: 0  
-    maxRunners: 5  
-#https://github.com/actions/actions-runner-controller/blob/5f4c132f/charts/gha-runner-scale-set/Chart.yaml
-    #  Dedicated scale set identity
+
     runnerScaleSetName: v2-deploy-test
-#    runnerGroup: v2-test-group
     labels:
       - v2-deploy-test
+
+    minRunners: 0
+    maxRunners: 5
+
     runner:
       image:
         repository: ghcr.io/actions/actions-runner
@@ -33,6 +33,6 @@ spec:
 
     webhookServer:
       enabled: true
+      service:
+        type: LoadBalancer
 
-    webhookService:
-      type: LoadBalancer
