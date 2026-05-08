@@ -17,3 +17,7 @@ spec:
   values:
     authSecret:
       create: false
+    certManager:
+      enable: true
+    webhook:
+      enable: true
